@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Obsidian Git-AI Nexus 设计开发日志
 
@@ -24,3 +25,28 @@
 
 ---
 *记录人：Senior Frontend Engineer (AI Assistant)*
+=======
+# Obsidian Git-AI Nexus 设计开发日志
+
+本文档记录了 Obsidian Git-AI Nexus 应用从初期构思到多轮迭代的技术演进与设计决策。
+
+---
+
+## [v1.0.0 - v2.0.0] 历史记录
+*   核心功能建立：GitHub 集成、本地文件监控、Gemini AI 助手。
+*   稳定性增强：处理 API 403 权限冲突、409 同步冲突、NotReadableError 句柄失效。
+
+---
+
+## [v2.1.0] - 目录树递归同步与结构保留 (2024-05-27)
+### 技术改进
+*   **递归扫描算法**: 引入 `traverseDirectory` 辅助函数。现在系统不仅扫描根目录，还会深度遍历所有层级的子文件夹（自动跳过 `.git` 等系统目录）。
+*   **结构化路径计算**: 在同步过程中实时计算文件的 `relativePath`。通过将该路径传递给 GitHub API，确保 GitHub 仓库中的文件层级与本地 Obsidian 库完全一致，解决了“新文件无法推送”或“子文件夹文件被扁平化”的问题。
+*   **隐藏目录过滤**: 增强了目录扫描安全性，默认排除以 `.` 开头的隐藏目录，避免同步冗余的配置数据。
+
+### UI/UX 改进
+*   **流水明细**: 同步流水现在会显示文件的相对路径，方便用户确认文件同步的精确位置。
+
+---
+*记录人：Senior Frontend Engineer (AI Assistant)*
+>>>>>>> c200e9cf6f32689b7631b8949ad109b1a2e56e8b
