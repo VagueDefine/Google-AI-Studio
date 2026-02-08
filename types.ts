@@ -19,6 +19,17 @@ export interface Branch {
   name: string;
 }
 
+export interface MonitoredProject {
+  id: string;
+  localName: string;
+  owner: string;
+  repo: string;
+  branch: string;
+  lastSync: string;
+  status: 'idle' | 'syncing' | 'error';
+  fileCount: number;
+}
+
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;

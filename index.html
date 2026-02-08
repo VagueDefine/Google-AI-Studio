@@ -3,23 +3,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Git-AI Nexus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GitHub Nexus Mobile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom scrollbar for better look in small panes */
-        ::-webkit-scrollbar {
-            width: 4px;
+        /* Modern mobile-first styles */
+        body {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
         }
-        ::-webkit-scrollbar-track {
-            background: transparent;
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #4b5563;
-            border-radius: 10px;
+
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b7280;
+
+        /* Prevent text selection during long press (optional) */
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
         }
     </style>
 <script type="importmap">
@@ -35,7 +42,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100">
+<body class="bg-[#f6f8fa] dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 overflow-hidden h-full">
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>
