@@ -1,4 +1,3 @@
-
 import { Repository, Branch } from '../types';
 
 const GITHUB_API_URL = 'https://api.github.com';
@@ -22,5 +21,17 @@ export const fetchRepositoryBranches = async (token: string, owner: string, repo
     },
   });
   if (!response.ok) throw new Error('Failed to fetch branches.');
+  return response.json();
+};
+
+export const fetchRepositoryContents = async (token: string, owner: string, repo: string, branch: string = '', path: string = ''): Promise<any[]> => {
+  const url = `${GITHUB_API_URL}/repos/${owner}/${repo}/contents/${path}${branch ? `?ref=${branch}` : ''}`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+    },
+  });
+  if (!response.ok) return [];
   return response.json();
 };
