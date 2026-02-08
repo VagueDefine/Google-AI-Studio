@@ -1,8 +1,0 @@
-{
-  "name": "Obsidian Git-AI Nexus",
-  "description": "A powerful React application designed for Obsidian integration, featuring GitHub repository management and Gemini AI-powered multi-modal chat.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
-}
